@@ -5,18 +5,19 @@ import { Target, Globe, TrendingUp, Heart } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
+import Image from "next/image"
 
 const team = [
   {
     name: "Neela G Aekbote",
     role: "Co-Founder & Operations Director",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/neela-team.jpg",
     bio: "A born leader and engineering graduate with vast experience in IT and customer support. She completed Export Management Training Program from VTPC and spearheads overall operations and finance activities at EnnGee.",
   },
   {
     name: "Giridhar M Aekbote",
     role: "Co-Founder & Business Development Director",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/giridhar-team.jpg",
     bio: "Over 30 years rich industry experience in Information Technology & Exports domain. He brings vast global experience in Business Development, Customer engagement, OEM Partnership, and Procurement Management.",
   },
 ]
@@ -60,6 +61,23 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
+              <div className="flex justify-center mb-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="w-24 h-24 flex items-center justify-center bg-white rounded-2xl shadow-lg"
+                >
+                  <Image
+                    src="/logofinal.png"
+                    alt="EnnGee Enterprises Logo"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                    priority
+                  />
+                </motion.div>
+              </div>
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6">
                 About EnnGee Enterprises
               </h1>
@@ -113,8 +131,24 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <img src="/placeholder.svg?height=500&width=600" alt="Our Story" className="rounded-2xl shadow-2xl" />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-2xl" />
+                <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 shadow-2xl">
+                  <div className="flex justify-center mb-6">
+                    <Image
+                      src="/logofinal.png"
+                      alt="EnnGee Enterprises Logo"
+                      width={120}
+                      height={120}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">EnnGee Enterprises</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      "Think Global…Connect Local" - Unlocking global market potential for locally manufactured Indian products.
+                    </p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent rounded-2xl" />
               </motion.div>
             </div>
           </div>
@@ -249,9 +283,11 @@ export default function AboutPage() {
                 >
                   <Card className="text-center overflow-hidden border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                     <div className="relative overflow-hidden">
-                      <img
-                        src={member.image || "/placeholder.svg"}
+                      <Image
+                        src={member.image}
                         alt={member.name}
+                        width={400}
+                        height={300}
                         className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
