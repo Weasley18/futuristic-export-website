@@ -33,7 +33,7 @@ export function Navigation() {
               <Zap className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Future Export
+              EnnGee Enterprises
             </span>
           </Link>
 
@@ -62,7 +62,7 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full px-6">
-              Get Quote
+              Get Inquiry
             </Button>
           </div>
 
@@ -111,7 +111,7 @@ export function Navigation() {
                 className="pt-4"
               >
                 <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full">
-                  Get Quote
+                  Get Inquiry
                 </Button>
               </motion.div>
             </div>

@@ -8,51 +8,39 @@ import { Navigation } from "@/components/navigation"
 
 const team = [
   {
-    name: "Sarah Johnson",
-    role: "CEO & Founder",
+    name: "Neela G Aekbote",
+    role: "Co-Founder & Operations Director",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "15+ years in international trade",
+    bio: "A born leader and engineering graduate with vast experience in IT and customer support. She completed Export Management Training Program from VTPC and spearheads overall operations and finance activities at EnnGee.",
   },
   {
-    name: "Michael Chen",
-    role: "CTO",
+    name: "Giridhar M Aekbote",
+    role: "Co-Founder & Business Development Director",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Tech innovation expert",
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Head of Operations",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Global logistics specialist",
-  },
-  {
-    name: "David Kim",
-    role: "Sales Director",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "International market expert",
+    bio: "Over 30 years rich industry experience in Information Technology & Exports domain. He brings vast global experience in Business Development, Customer engagement, OEM Partnership, and Procurement Management.",
   },
 ]
 
 const values = [
   {
     icon: Target,
-    title: "Innovation",
-    description: "We constantly push the boundaries of what's possible in global trade",
+    title: "Quality Excellence",
+    description: "We ensure the highest standards of Quality at the most favorable price, meeting international standards",
   },
   {
     icon: Heart,
-    title: "Integrity",
-    description: "Trust and transparency are the foundation of all our relationships",
+    title: "Customer Delight",
+    description: "We take great pride in meeting our customer's expectations by delivering the right products within committed timeline",
   },
   {
     icon: Globe,
-    title: "Global Reach",
-    description: "Connecting businesses across continents with seamless efficiency",
+    title: "Think Global…Connect Local",
+    description: "Our vision to unlock the global market potential for products manufactured locally in India",
   },
   {
     icon: TrendingUp,
-    title: "Excellence",
-    description: "We strive for perfection in every aspect of our service delivery",
+    title: "Value-for-Money",
+    description: "Offering profitable solutions to our esteemed stakeholders with committed service fulfillment",
   },
 ]
 
@@ -73,11 +61,10 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6">
-                About Future Export
+                About EnnGee Enterprises
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                We're pioneering the future of global trade through innovative technology, sustainable practices, and
-                unwavering commitment to excellence.
+                Leading Merchant Export Organization based in Bangalore, the Silicon Valley of India. We specialize in sourcing and exporting diverse range of quality Indian products and commodities to our worldwide customers.
               </p>
             </motion.div>
           </div>
@@ -93,23 +80,27 @@ export default function AboutPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">About EnnGee Enterprises</h2>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Founded in 2008, Future Export began as a vision to revolutionize international trade. What started as
-                  a small team with big dreams has grown into a global network spanning over 50 countries.
+                  We are pleased to introduce EnnGee Enterprises as one of the Leading merchant exporters based in India. 
+                  We specialize in a wide range of product categories to cater the evolving needs of our esteemed global customers.
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Our journey has been marked by continuous innovation, from implementing cutting-edge logistics
-                  solutions to pioneering sustainable export practices. Today, we're proud to be at the forefront of the
-                  digital transformation in global trade.
+                  As a one-stop-shop, EnnGee is committed to offer our global customers the finest brands of "Make in India" products. 
+                  The products we offer meets highest standards of Quality at most favorable price. We take great pride in meeting our customer's 
+                  expectations by delivering the right products at a competitive price and within committed timeline.
+                </p>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Our vision of "Think Global…Connect Local" inspires us to unlock the Global market potential for the products manufactured 
+                  locally in India. It is worthwhile to mention "You Name It, We Supply It" has been our corporate growth strategy.
                 </p>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-2">2008</div>
-                    <div className="text-gray-600">Founded</div>
+                    <div className="text-gray-600">Established</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
+                    <div className="text-3xl font-bold text-purple-600 mb-2">7+</div>
                     <div className="text-gray-600">Countries</div>
                   </div>
                 </div>
@@ -168,6 +159,68 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Global Presence & Product Categories */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Global Reach</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  EnnGee has established its clientele in Australia, New Zealand, Canada, US, UK, Fiji and other Pacific Island Nations. 
+                  The company has focused plans to enter into Europe, South Africa and other countries in near future.
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="bg-blue-50 p-3 rounded-lg">Australia</div>
+                  <div className="bg-purple-50 p-3 rounded-lg">New Zealand</div>
+                  <div className="bg-green-50 p-3 rounded-lg">Canada</div>
+                  <div className="bg-blue-50 p-3 rounded-lg">United States</div>
+                  <div className="bg-purple-50 p-3 rounded-lg">United Kingdom</div>
+                  <div className="bg-green-50 p-3 rounded-lg">Pacific Islands</div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Product Portfolio</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Our range of commodities and products portfolio comprises diverse categories to meet global demands:
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                    <span>Food & Beverages</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                    <span>Home and Kitchenware</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                    <span>Personal Care & Garments</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                    <span>Handicrafts & Pooja Samagri</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-indigo-500 rounded-full mr-3"></div>
+                    <span>School & Stationary, Eco-friendly items</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Team Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
@@ -184,7 +237,7 @@ export default function AboutPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {team.map((member, index) => (
                 <motion.div
                   key={member.name}
@@ -224,9 +277,9 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Global Network</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Partner with EnnGee</h2>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Become part of the future of international trade
+                Experience the finest brands of "Make in India" products with our committed service
               </p>
             </motion.div>
           </div>

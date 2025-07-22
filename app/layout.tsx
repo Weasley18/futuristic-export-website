@@ -6,8 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Future Export - Global Trade Solutions",
-  description: "Connecting Global Markets with Tomorrow's Technology",
+  title: "EnnGee Enterprises - Leading Merchant Export Organization",
+  description: "Leading Merchant Export Organization based in Bangalore, specializing in sourcing and exporting diverse range of quality Indian products and commodities worldwide.",
     generator: 'v0.dev'
 }
 

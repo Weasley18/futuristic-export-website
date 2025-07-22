@@ -134,15 +134,23 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Future Export
+          EnnGee Enterprises
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl mb-8 text-gray-300"
+          className="text-xl md:text-2xl mb-4 text-gray-300"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          Connecting Global Markets with Tomorrow's Technology
+          Leading Merchant Export Organization
+        </motion.p>
+        <motion.p
+          className="text-lg md:text-xl mb-8 text-gray-400 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          Specializing in sourcing and exporting diverse range of quality Indian products and commodities to our worldwide customers
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -166,10 +174,10 @@ function HeroSection() {
 
 export default function HomePage() {
   const stats = [
-    { icon: Globe, label: "Countries Served", value: "50+" },
-    { icon: TrendingUp, label: "Growth Rate", value: "150%" },
-    { icon: Users, label: "Happy Clients", value: "1000+" },
-    { icon: Award, label: "Years Experience", value: "15+" },
+    { icon: Globe, label: "Countries Served", value: "7+" },
+    { icon: TrendingUp, label: "Years Experience", value: "15+" },
+    { icon: Users, label: "Happy Clients", value: "100+" },
+    { icon: Award, label: "Product Categories", value: "9+" },
   ]
 
   return (
@@ -210,6 +218,77 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Vision, Mission & Values Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Foundation</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              The principles that drive our commitment to excellence
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-blue-900 mb-4">VISION</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    "Think Global…Connect Local" unlock the global market potential for products manufactured locally in India 
+                    and ensure enhanced business outreach and growth for all our stake holders.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-purple-900 mb-4">MISSION</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Consistently scale up our Customer footprint globally by offering best of the products portfolio 
+                    and ensure highest level of customer happiness.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100 hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-green-900 mb-4">VALUES</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Continue to be a leading Merchant Export company complying with International Quality, 
+                    Committed Service Fulfillment, offering Value-for-Money Products, ensures Profitable to our esteemed stake holders.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
@@ -220,19 +299,19 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Featured Products</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Product Portfolio</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our premium selection of export-ready products designed for global markets
+              Diverse range of quality Indian products and commodities for worldwide customers
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Smart Electronics", category: "Technology", image: "/placeholder.svg?height=300&width=400" },
-              { name: "Sustainable Textiles", category: "Fashion", image: "/placeholder.svg?height=300&width=400" },
+              { name: "Food & Beverages", category: "Consumables", image: "/placeholder.svg?height=300&width=400" },
+              { name: "Home & Kitchenware", category: "Household", image: "/placeholder.svg?height=300&width=400" },
               {
-                name: "Industrial Equipment",
-                category: "Manufacturing",
+                name: "Garments & Handicrafts",
+                category: "Lifestyle",
                 image: "/placeholder.svg?height=300&width=400",
               },
             ].map((product, index) => (
@@ -289,6 +368,114 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              What our valued clients say about working with EnnGee Enterprises
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">
+                    "We are very grateful for your excellent service and professionalism. We had immense pleasure dealing with EnnGee for over 3 years. 
+                    We look forward for your continued support in services for sourcing of products from India."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <div className="font-semibold text-gray-900">Avinesh</div>
+                      <div className="text-blue-600">Tonertech</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">
+                    "I have found them to be very professional. Requested information was always provided in a timely manner. 
+                    Their prices are very attractive as they deal directly with the producers and not the middleman. Highly recommended."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <div className="font-semibold text-gray-900">Rajnesh Prasad</div>
+                      <div className="text-blue-600">Importer</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">
+                    "One word to define EnnGee team, they are just amazing guys and dependable supplier to work with. 
+                    Appreciate their Professional approach, Commitment in their service. They always find the right product and rates for our sourcing out of INDIA."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <div className="font-semibold text-gray-900">Sania</div>
+                      <div className="text-blue-600">Canada</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8">
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">
+                    "We are grateful and value our association with EnnGee, who are our exclusive export partner. 
+                    Confident of scaling greater heights of partnership together."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <div className="font-semibold text-gray-900">Chirag Jain</div>
+                      <div className="text-blue-600">Parag Rakhi's</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
         <div className="container mx-auto px-4 text-center">
@@ -298,9 +485,9 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Export Globally?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Source from India?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses worldwide who trust us with their export needs
+              "You Name It, We Supply It" - Connect with us for all your Indian product sourcing needs
             </p>
             <Link href="/contact">
               <Button
