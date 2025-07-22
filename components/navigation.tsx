@@ -10,8 +10,8 @@ import Image from "next/image"
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
   { href: "/about", label: "About" },
+  { href: "/products", label: "Products" },
   { href: "/contact", label: "Contact" },
 ]
 

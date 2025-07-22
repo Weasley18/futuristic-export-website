@@ -71,15 +71,15 @@ export default function AboutPage() {
                   <Image
                     src="/logofinal.png"
                     alt="EnnGee Enterprises Logo"
-                    width={80}
-                    height={80}
+                    width={100}
+                    height={100}
                     className="object-contain"
                     priority
                   />
                 </motion.div>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6">
-                About EnnGee Enterprises
+                
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Leading Merchant Export Organization based in Bangalore, the Silicon Valley of India. We specialize in sourcing and exporting diverse range of quality Indian products and commodities to our worldwide customers.
