@@ -125,7 +125,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 pt-24">
       <div ref={mountRef} className="absolute inset-0 z-0"></div>
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <motion.h1

@@ -27,23 +27,22 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 flex items-center justify-center">
-              <Image
-                src="/logofinal.png"
-                alt="EnnGee Enterprises Logo"
-                width={40}
-                height={40}
-                className="object-contain"
-                priority
-              />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              EnnGee Enterprises
-            </span>
-          </Link>
+          <div className="absolute left-0 top-0 h-full flex items-center">
+            <Link href="/" className="flex items-center">
+              <div className="h-20 w-auto flex items-center justify-center py-3 px-4">
+                <Image
+                  src="/logofinal.png"
+                  alt="EnnGee Enterprises Logo"
+                  width={100}
+                  height={64}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -67,15 +66,8 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full px-6">
-              Get Inquiry
-            </Button>
-          </div>
-
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <Button variant="ghost" size="icon" className="md:hidden absolute right-0 top-1/2 -translate-y-1/2" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
@@ -112,16 +104,6 @@ export function Navigation() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
-                className="pt-4"
-              >
-                <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full">
-                  Get Inquiry
-                </Button>
-              </motion.div>
             </div>
           </motion.div>
         )}
