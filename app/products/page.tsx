@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Search, Grid, List, Star, ShoppingCart, Eye } from "lucide-react"
+import { Search, Grid, List, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -17,7 +17,6 @@ const products = [
     name: "Indian Spices & Seasonings",
     category: "Food & Beverages",
     price: "₹150",
-    rating: 4.9,
     image: "/placeholder.svg?height=300&width=400",
     description: "Premium quality Indian spices and traditional seasonings for global culinary needs",
     tags: ["Organic", "Traditional", "Export Quality"],
@@ -28,7 +27,6 @@ const products = [
     name: "Tea & Coffee Products",
     category: "Food & Beverages",
     price: "₹200",
-    rating: 4.8,
     image: "/placeholder.svg?height=300&width=400",
     description: "Finest Indian tea leaves and aromatic coffee blends sourced from premium gardens",
     tags: ["Premium", "Aromatic", "Fresh"],
@@ -39,7 +37,6 @@ const products = [
     name: "Stainless Steel Cookware",
     category: "Home & Kitchenware",
     price: "₹800",
-    rating: 4.7,
     image: "/placeholder.svg?height=300&width=400",
     description: "High-quality stainless steel cooking utensils and kitchenware for modern homes",
     tags: ["Durable", "Stainless Steel", "Modern"],
@@ -50,7 +47,6 @@ const products = [
     name: "Traditional Dinnerware",
     category: "Home & Kitchenware",
     price: "₹500",
-    rating: 4.6,
     image: "/placeholder.svg?height=300&width=400",
     description: "Beautiful traditional Indian dinnerware sets with intricate designs",
     tags: ["Traditional", "Artistic", "Elegant"],
@@ -61,7 +57,6 @@ const products = [
     name: "Ayurvedic Skincare",
     category: "Personal Care",
     price: "₹300",
-    rating: 4.8,
     image: "/placeholder.svg?height=300&width=400",
     description: "Natural Ayurvedic skincare products made with traditional Indian herbs",
     tags: ["Ayurvedic", "Natural", "Herbal"],
@@ -72,7 +67,6 @@ const products = [
     name: "Indian Cotton Garments",
     category: "Garments",
     price: "₹1200",
-    rating: 4.9,
     image: "/placeholder.svg?height=300&width=400",
     description: "Premium cotton garments showcasing traditional Indian craftsmanship",
     tags: ["Cotton", "Handcrafted", "Traditional"],
@@ -83,7 +77,6 @@ const products = [
     name: "Wooden Handicrafts",
     category: "Handicrafts",
     price: "₹600",
-    rating: 4.7,
     image: "/placeholder.svg?height=300&width=400",
     description: "Exquisite wooden handicrafts representing Indian artisan traditions",
     tags: ["Handmade", "Wooden", "Artistic"],
@@ -94,7 +87,6 @@ const products = [
     name: "Brass Decoratives",
     category: "Handicrafts",
     price: "₹900",
-    rating: 4.8,
     image: "/placeholder.svg?height=300&width=400",
     description: "Elegant brass decorative items with traditional Indian motifs",
     tags: ["Brass", "Decorative", "Traditional"],
@@ -105,7 +97,6 @@ const products = [
     name: "Incense & Dhoop",
     category: "Pooja Samagri",
     price: "₹120",
-    rating: 4.9,
     image: "/placeholder.svg?height=300&width=400",
     description: "Pure and aromatic incense sticks and dhoop for spiritual practices",
     tags: ["Pure", "Aromatic", "Spiritual"],
@@ -116,7 +107,6 @@ const products = [
     name: "Puja Essentials",
     category: "Pooja Samagri",
     price: "₹250",
-    rating: 4.8,
     image: "/placeholder.svg?height=300&width=400",
     description: "Complete set of traditional puja items for Hindu religious ceremonies",
     tags: ["Traditional", "Religious", "Complete Set"],
@@ -127,7 +117,6 @@ const products = [
     name: "Festival Decorations",
     category: "Festivity Items",
     price: "₹400",
-    rating: 4.6,
     image: "/placeholder.svg?height=300&width=400",
     description: "Colorful decorative items for Indian festivals and celebrations",
     tags: ["Colorful", "Festive", "Decorative"],
@@ -138,7 +127,6 @@ const products = [
     name: "Educational Supplies",
     category: "School & Stationary",
     price: "₹180",
-    rating: 4.7,
     image: "/placeholder.svg?height=300&width=400",
     description: "Quality educational supplies and stationary for schools and offices",
     tags: ["Educational", "Quality", "Essential"],
@@ -149,7 +137,6 @@ const products = [
     name: "Bamboo Products",
     category: "Eco-friendly Items",
     price: "₹350",
-    rating: 4.9,
     image: "/placeholder.svg?height=300&width=400",
     description: "Sustainable bamboo products for environmentally conscious consumers",
     tags: ["Sustainable", "Bamboo", "Eco-friendly"],
@@ -160,7 +147,6 @@ const products = [
     name: "Organic Cotton Bags",
     category: "Eco-friendly Items",
     price: "₹80",
-    rating: 4.8,
     image: "/placeholder.svg?height=300&width=400",
     description: "Reusable organic cotton bags as sustainable alternatives to plastic",
     tags: ["Organic", "Reusable", "Sustainable"],
@@ -191,11 +177,9 @@ export default function ProductsPage() {
             return a.name.localeCompare(b.name)
           case "price":
             return (
-              Number.parseFloat(a.price.replace("$", "").replace(",", "")) -
-              Number.parseFloat(b.price.replace("$", "").replace(",", ""))
+              Number.parseFloat(a.price.replace("₹", "").replace(",", "")) -
+              Number.parseFloat(b.price.replace("₹", "").replace(",", ""))
             )
-          case "rating":
-            return b.rating - a.rating
           default:
             return 0
         }
@@ -309,7 +293,6 @@ export default function ProductsPage() {
                   <SelectContent>
                     <SelectItem value="name">Name</SelectItem>
                     <SelectItem value="price">Price</SelectItem>
-                    <SelectItem value="rating">Rating</SelectItem>
                   </SelectContent>
                 </Select>
 
@@ -366,9 +349,6 @@ export default function ProductsPage() {
                         <Button size="sm" className="rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30">
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button size="sm" className="rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                          <ShoppingCart className="h-4 w-4" />
-                        </Button>
                       </div>
                       <Badge className="absolute top-4 left-4 bg-blue-600 hover:bg-blue-700">{product.category}</Badge>
                     </div>
@@ -381,24 +361,15 @@ export default function ProductsPage() {
 
                       <p className="text-gray-600 mb-4">{product.description}</p>
 
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                          <span className="text-sm font-semibold">{product.rating}</span>
-                        </div>
-                        <div className="flex gap-1">
-                          {product.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
+                      <div className="flex gap-1 justify-end">
+                        {product.tags.map((tag) => (
+                          <Badge key={tag} variant="secondary" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
                       </div>
 
-                      <div className="flex gap-2">
-                        <Button className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full">
-                          Add to Cart
-                        </Button>
+                      <div className="flex justify-center mt-4">
                         <Button variant="outline" size="icon" className="rounded-full bg-transparent">
                           <Eye className="h-4 w-4" />
                         </Button>

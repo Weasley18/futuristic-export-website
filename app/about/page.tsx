@@ -286,9 +286,9 @@ export default function AboutPage() {
                       <Image
                         src={member.image}
                         alt={member.name}
-                        width={400}
-                        height={300}
-                        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+                        width={500}
+                        height={400}
+                        className="w-full h-80 object-cover transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                     </div>
