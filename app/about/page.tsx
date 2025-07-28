@@ -5,6 +5,7 @@ import { Target, Globe, TrendingUp, Heart } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import Image from "next/image"
 
 const team = [
@@ -51,7 +52,7 @@ export default function AboutPage() {
       <CustomCursor />
       <Navigation />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-teal-50 pt-20">
         {/* Hero Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
@@ -78,7 +79,7 @@ export default function AboutPage() {
                   />
                 </motion.div>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold warm-gradient-text mb-6">
                 
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -112,16 +113,16 @@ export default function AboutPage() {
                   Our vision of "Think Global…Connect Local" inspires us to unlock the Global market potential for the products manufactured 
                   locally in India. It is worthwhile to mention "You Name It, We Supply It" has been our corporate growth strategy.
                 </p>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">2008</div>
-                    <div className="text-gray-600">Established</div>
+                                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-orange-600 mb-2">2008</div>
+                      <div className="text-gray-600">Established</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-teal-600 mb-2">7+</div>
+                      <div className="text-gray-600">Countries</div>
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">7+</div>
-                    <div className="text-gray-600">Countries</div>
-                  </div>
-                </div>
               </motion.div>
 
               <motion.div
@@ -131,7 +132,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 shadow-2xl">
+                <div className="relative bg-gradient-to-br from-orange-100 to-amber-100 rounded-2xl p-8 shadow-2xl">
                   <div className="flex justify-center mb-6">
                     <Image
                       src="/logofinal.png"
@@ -148,7 +149,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-t from-orange-600/10 to-transparent rounded-2xl" />
               </motion.div>
             </div>
           </div>
@@ -180,7 +181,7 @@ export default function AboutPage() {
                 >
                   <Card className="text-center h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                     <CardContent className="p-8">
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
+                      <div className="inline-flex items-center justify-center w-16 h-16 warm-gradient rounded-full mb-6">
                         <value.icon className="h-8 w-8 text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
@@ -286,9 +287,9 @@ export default function AboutPage() {
                       <Image
                         src={member.image}
                         alt={member.name}
-                        width={400}
-                        height={300}
-                        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+                        width={500}
+                        height={400}
+                        className="w-full h-80 object-cover transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                     </div>
@@ -305,7 +306,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
+        <section className="py-20 warm-gradient">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -314,13 +315,15 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Partner with EnnGee</h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
                 Experience the finest brands of "Make in India" products with our committed service
               </p>
             </motion.div>
           </div>
         </section>
       </div>
+
+      <Footer />
     </>
   )
 }
