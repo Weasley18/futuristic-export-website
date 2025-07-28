@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
@@ -11,26 +11,33 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: "hello@futureexport.com",
+    details: (
+      <div className="text-sm font-semibold break-words">
+        enngee.enterprisesblr@gmail.com
+      </div>
+    ),
     description: "Send us an email anytime",
   },
   {
     icon: Phone,
     title: "Phone",
-    details: "+1 (555) 123-4567",
-    description: "Mon-Fri from 8am to 6pm",
+    details: "+91 9902060246 / 9845390246",
+    description: "Contact us for inquiries",
   },
   {
     icon: MapPin,
     title: "Office",
-    details: "123 Export Plaza, Trade City",
-    description: "Visit our headquarters",
-  },
-  {
-    icon: Clock,
-    title: "Hours",
-    details: "Mon-Fri: 8am-6pm",
-    description: "Weekend support available",
+    details: (
+      <div className="text-sm leading-relaxed">
+        <div className="font-semibold">EnnGee Enterprises</div>
+        <div>#174, Neelagiri</div>
+        <div>9th Cross, 4th Main, 6th Block</div>
+        <div>Nagarbhavi 2nd Stage</div>
+        <div>Bangalore - 560072</div>
+        <div>Karnataka, INDIA</div>
+      </div>
+    ),
+    description: "Visit Us",
   },
 ]
 
@@ -50,9 +57,9 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold warm-gradient-text mb-6">
+              <h4 className="text-4xl font-bold text-gray-900 mb-6">
                 Get In Touch
-              </h1>
+              </h4>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Connect with EnnGee Enterprises - your trusted partner for quality Indian products and global export solutions.
               </p>
@@ -63,7 +70,7 @@ export default function ContactPage() {
         {/* Contact Info Cards */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
@@ -79,7 +86,13 @@ export default function ContactPage() {
                         <info.icon className="h-8 w-8 text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h3>
-                      <div className="text-lg font-semibold text-orange-600 mb-2">{info.details}</div>
+                      <div className="text-orange-600 mb-2">
+                        {typeof info.details === 'string' ? (
+                          <div className="text-lg font-semibold">{info.details}</div>
+                        ) : (
+                          info.details
+                        )}
+                      </div>
                       <p className="text-gray-600 text-sm">{info.description}</p>
                     </CardContent>
                   </Card>

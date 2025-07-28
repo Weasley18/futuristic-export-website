@@ -2,14 +2,16 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as THREE from 'three';
-import { motion } from "framer-motion"
-import { ArrowRight, Globe, TrendingUp, Users, Award } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ArrowRight, Globe, TrendingUp, Users, Award, X, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { getCategoryMappings, getImageWithFallback } from "@/lib/products-data"
 
 // Hero Section Component with Three.js
 function HeroSection() {
@@ -174,12 +176,24 @@ function HeroSection() {
 }
 
 export default function HomePage() {
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
+  const categoryMappings = getCategoryMappings();
+
   const stats = [
     { icon: Globe, label: "Countries Served", value: "7+" },
     { icon: TrendingUp, label: "Years Experience", value: "15+" },
     { icon: Users, label: "Happy Clients", value: "100+" },
-    { icon: Award, label: "Product Categories", value: "9+" },
+    { icon: Award, label: "Product Categories", value: "12+" },
   ]
+
+  const handleCardExpand = (categoryKey: string) => {
+    setExpandedCard(expandedCard === categoryKey ? null : categoryKey);
+  };
+
+  const handleProductView = (productId: number) => {
+    // Navigate to products page with specific product selected
+    window.location.href = `/products?product=${productId}`;
+  };
 
   return (
     <>
@@ -308,12 +322,26 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Food & Beverages", category: "Consumables", image: "/placeholder.svg?height=300&width=400" },
-              { name: "Home & Kitchenware", category: "Household", image: "/placeholder.svg?height=300&width=400" },
-              {
-                name: "Garments & Handicrafts",
-                category: "Lifestyle",
-                image: "/placeholder.svg?height=300&width=400",
+              { 
+                name: "Premium Fabrics & Textiles", 
+                category: "Fabrics", 
+                image: "/table-linens.jpeg",
+                categoryKey: "Fabrics",
+                description: "High-quality textiles, linens, towels, and premium fabric collections"
+              },
+              { 
+                name: "Traditional Diyas & Dhoop", 
+                category: "Religious Items", 
+                image: "/paisley-diyas.jpeg",
+                categoryKey: "Dhoop",
+                description: "Authentic religious items including diyas, dhoop, and pooja samagri"
+              },
+              { 
+                name: "Laboratory Equipment", 
+                category: "Educational & Medical", 
+                image: "/medical-educational-models.jpeg",
+                categoryKey: "Lab Equipments",
+                description: "Professional-grade educational and medical equipment for institutions"
               },
             ].map((product, index) => (
               <motion.div
@@ -322,50 +350,144 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                className={`transition-all duration-500 ${
+                  expandedCard === product.categoryKey ? 'md:col-span-3' : ''
+                }`}
               >
-                <Card className="group cursor-pointer overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="text-sm text-orange-600 font-semibold mb-2">{product.category}</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{product.name}</h3>
-                    <Button
-                      variant="outline"
-                      className="w-full group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 bg-transparent"
-                      data-interactive="true"
-                    >
-                      Learn More
-                    </Button>
-                  </CardContent>
+                <Card className={`group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm ${
+                  expandedCard === product.categoryKey ? 'min-h-[600px]' : ''
+                }`}>
+                  {!expandedCard || expandedCard !== product.categoryKey ? (
+                    <>
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={product.image || "/placeholder.svg"}
+                          alt={product.name}
+                          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <CardContent className="p-6">
+                        <div className="text-sm text-orange-600 font-semibold mb-2">{product.category}</div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                        <p className="text-gray-600 text-sm mb-4">{product.description}</p>
+                        <Button
+                          variant="outline"
+                          className="w-full group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 bg-transparent"
+                          data-interactive="true"
+                          onClick={() => handleCardExpand(product.categoryKey)}
+                        >
+                          Learn More
+                        </Button>
+                      </CardContent>
+                    </>
+                  ) : (
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-6">
+                        <div>
+                          <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
+                          <div className="text-orange-600 font-semibold">{product.category}</div>
+                        </div>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          onClick={() => setExpandedCard(null)}
+                          className="rounded-full"
+                        >
+                          <X className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      
+                      <AnimatePresence>
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -20 }}
+                          transition={{ duration: 0.3 }}
+                          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        >
+                          {categoryMappings[product.categoryKey]?.slice(0, 6).map((categoryProduct, prodIndex) => (
+                            <motion.div
+                              key={categoryProduct.id}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.3, delay: prodIndex * 0.1 }}
+                              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+                            >
+                              <div className="aspect-square relative overflow-hidden">
+                                <img
+                                  src={getImageWithFallback(categoryProduct.image, categoryProduct.name)}
+                                  alt={categoryProduct.name}
+                                  className="w-full h-full object-contain bg-gray-50 transition-transform duration-300 hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                                  <Button 
+                                    size="sm" 
+                                    className="bg-white/90 text-gray-900 hover:bg-white"
+                                    onClick={() => handleProductView(categoryProduct.id)}
+                                  >
+                                    <Eye className="h-4 w-4 mr-1" />
+                                    View
+                                  </Button>
+                                </div>
+                              </div>
+                              <div className="p-4">
+                                <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2">
+                                  {categoryProduct.name}
+                                </h4>
+                                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                                  {categoryProduct.description}
+                                </p>
+                                <div className="flex flex-wrap gap-1">
+                                  {categoryProduct.tags.slice(0, 2).map((tag) => (
+                                    <Badge key={tag} variant="secondary" className="text-xs">
+                                      {tag}
+                                    </Badge>
+                                  ))}
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      </AnimatePresence>
+                      
+                      {categoryMappings[product.categoryKey] && categoryMappings[product.categoryKey].length > 6 && (
+                        <div className="mt-6 text-center">
+                          <Link href="/products">
+                            <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                              View All {categoryMappings[product.categoryKey].length} Products
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </Card>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <Link href="/products">
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 py-4 text-lg rounded-full hover:bg-orange-600 hover:text-white transition-all duration-300 bg-transparent border-orange-600 text-orange-600"
-                data-interactive="true"
-              >
-                View All Products <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </motion.div>
+          {!expandedCard && (
+            <motion.div
+              className="text-center mt-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <Link href="/products">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-4 text-lg rounded-full hover:bg-orange-600 hover:text-white transition-all duration-300 bg-transparent border-orange-600 text-orange-600"
+                  data-interactive="true"
+                >
+                  View All Products <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -501,7 +623,7 @@ export default function HomePage() {
             </Link>
           </motion.div>
         </div>
-              </section>
+      </section>
 
       <Footer />
     </>

@@ -232,23 +232,35 @@ export default function AboutPage() {
                 <div className="space-y-3">
                   <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
                     <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                    <span>Food & Beverages</span>
+                    <span>Bags & Travel Accessories</span>
                   </div>
                   <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
                     <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                    <span>Home and Kitchenware</span>
+                    <span>Premium Fabrics & Textiles</span>
                   </div>
                   <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                    <span>Personal Care & Garments</span>
+                    <span>Religious Items (Dhoop, Diyas, Pooja Samagri)</span>
                   </div>
                   <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
                     <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                    <span>Handicrafts & Pooja Samagri</span>
+                    <span>Household Items (Brooms & Cleaning)</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                    <span>BBQ & Outdoor Equipment</span>
                   </div>
                   <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
                     <div className="w-3 h-3 bg-indigo-500 rounded-full mr-3"></div>
-                    <span>School & Stationary, Eco-friendly items</span>
+                    <span>Food Items (Confectionaries, Jaggery, Masala)</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-teal-500 rounded-full mr-3"></div>
+                    <span>Laboratory & Educational Equipment</span>
+                  </div>
+                  <div className="flex items-center p-3 bg-white rounded-lg border border-gray-200">
+                    <div className="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                    <span>Safety Matches & Fire Products</span>
                   </div>
                 </div>
               </motion.div>

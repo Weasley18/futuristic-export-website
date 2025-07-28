@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Globe, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Mail, Phone, MapPin, Globe } from "lucide-react"
 import Image from "next/image"
 
 export function Footer() {
@@ -14,19 +14,14 @@ export function Footer() {
   ]
 
   const productCategories = [
-    "Food & Beverages",
-    "Home & Kitchenware", 
-    "Personal Care",
-    "Garments",
-    "Handicrafts",
-    "Pooja Samagri"
-  ]
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    "Bags & Travel Accessories",
+    "Premium Fabrics & Textiles", 
+    "Religious Items",
+    "Household Items",
+    "BBQ & Outdoor Equipment",
+    "Food Items",
+    "Laboratory Equipment",
+    "Safety Matches"
   ]
 
   return (
@@ -57,18 +52,6 @@ export function Footer() {
             <p className="text-gray-300 mb-6 leading-relaxed">
               Leading Merchant Export Organization specializing in sourcing and exporting diverse range of quality Indian products and commodities to worldwide customers.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 bg-orange-600 hover:bg-orange-500 rounded-full flex items-center justify-center transition-colors duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-5 w-5" />
-                </Link>
-              ))}
-            </div>
           </motion.div>
 
           {/* Quick Links */}
@@ -129,23 +112,24 @@ export function Footer() {
                 <MapPin className="h-5 w-5 text-orange-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                    123 Export Plaza<br />
-                    Trade City, Bangalore<br />
-                    Karnataka, India
+                    #174, Neelagiri<br />
+                    9th Cross, 4th Main, 6th Block<br />
+                    Nagarbhavi 2nd Stage<br />
+                    Bangalore - 560072<br />
+                    Karnataka, INDIA
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-teal-400 flex-shrink-0" />
-                <p className="text-gray-300 text-sm">+91 (555) 123-4567</p>
+                <div>
+                  <p className="text-gray-300 text-sm">+91 9902060246</p>
+                  <p className="text-gray-300 text-sm">+91 9845390246</p>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-orange-400 flex-shrink-0" />
-                <p className="text-gray-300 text-sm">hello@enngeeenterprises.com</p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Globe className="h-5 w-5 text-teal-400 flex-shrink-0" />
-                <p className="text-gray-300 text-sm">www.enngeeenterprises.com</p>
+                <p className="text-gray-300 text-sm">enngee.enterprisesblr@gmail.com</p>
               </div>
             </div>
           </motion.div>
@@ -165,14 +149,19 @@ export function Footer() {
               <p className="mt-1">Leading Merchant Export Organization | "Think Global…Connect Local"</p>
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+              <Link 
+                href="/Privacy and Terms.docx" 
+                target="_blank"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+              <Link 
+                href="/Privacy and Terms.docx" 
+                target="_blank"
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
+              >
                 Terms of Service
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
-                Export Terms
               </Link>
             </div>
           </div>
