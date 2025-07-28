@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 // Hero Section Component with Three.js
 function HeroSection() {
@@ -20,7 +21,7 @@ function HeroSection() {
 
     // Scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0f172a); // Dark background to match theme
+    scene.background = new THREE.Color(0x451a03); // Warm dark background to match theme
 
     // Camera
     const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
@@ -49,11 +50,11 @@ function HeroSection() {
     ];
 
     const materials = [
-      new THREE.MeshStandardMaterial({ color: 0x3b82f6, roughness: 0.5, metalness: 0.2 }), // Blue
-      new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.5, metalness: 0.2 }), // Green
-      new THREE.MeshStandardMaterial({ color: 0x60a5fa, roughness: 0.5, metalness: 0.2 }), // Light Blue
-      new THREE.MeshStandardMaterial({ color: 0x8b5cf6, roughness: 0.5, metalness: 0.2 }), // Purple
-      new THREE.MeshStandardMaterial({ color: 0x86efac, roughness: 0.5, metalness: 0.2 })  // Light Green
+      new THREE.MeshStandardMaterial({ color: 0xfb923c, roughness: 0.5, metalness: 0.2 }), // Orange
+      new THREE.MeshStandardMaterial({ color: 0x14b8a6, roughness: 0.5, metalness: 0.2 }), // Teal
+      new THREE.MeshStandardMaterial({ color: 0xf59e0b, roughness: 0.5, metalness: 0.2 }), // Amber
+      new THREE.MeshStandardMaterial({ color: 0x0891b2, roughness: 0.5, metalness: 0.2 }), // Cyan
+      new THREE.MeshStandardMaterial({ color: 0xea580c, roughness: 0.5, metalness: 0.2 })  // Dark Orange
     ];
 
     const objects: THREE.Mesh[] = [];
@@ -125,11 +126,11 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 pt-24">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-900 via-amber-900 to-teal-900 pt-24">
       <div ref={mountRef} className="absolute inset-0 z-0"></div>
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <motion.h1
-          className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent"
+          className="text-6xl md:text-8xl font-bold mb-6 warm-gradient-text"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -160,7 +161,7 @@ function HeroSection() {
           <Link href="/products">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="warm-button px-8 py-4 text-lg rounded-full"
               data-interactive="true"
             >
               Explore Products <ArrowRight className="ml-2 h-5 w-5" />
@@ -207,7 +208,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 warm-gradient rounded-full mb-4">
                   <stat.icon className="h-8 w-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
@@ -241,9 +242,9 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-2xl transition-all duration-300">
+              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-orange-50 to-orange-100 hover:shadow-2xl transition-all duration-300">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-blue-900 mb-4">VISION</h3>
+                  <h3 className="text-2xl font-bold text-orange-900 mb-4">VISION</h3>
                   <p className="text-gray-700 leading-relaxed">
                     "Think Global…Connect Local" unlock the global market potential for products manufactured locally in India 
                     and ensure enhanced business outreach and growth for all our stake holders.
@@ -258,9 +259,9 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100 hover:shadow-2xl transition-all duration-300">
+              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-amber-50 to-amber-100 hover:shadow-2xl transition-all duration-300">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-purple-900 mb-4">MISSION</h3>
+                  <h3 className="text-2xl font-bold text-amber-900 mb-4">MISSION</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Consistently scale up our Customer footprint globally by offering best of the products portfolio 
                     and ensure highest level of customer happiness.
@@ -275,9 +276,9 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100 hover:shadow-2xl transition-all duration-300">
+              <Card className="h-full border-0 shadow-lg bg-gradient-to-br from-teal-50 to-teal-100 hover:shadow-2xl transition-all duration-300">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-green-900 mb-4">VALUES</h3>
+                  <h3 className="text-2xl font-bold text-teal-900 mb-4">VALUES</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Continue to be a leading Merchant Export company complying with International Quality, 
                     Committed Service Fulfillment, offering Value-for-Money Products, ensures Profitable to our esteemed stake holders.
@@ -332,11 +333,11 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <CardContent className="p-6">
-                    <div className="text-sm text-blue-600 font-semibold mb-2">{product.category}</div>
+                    <div className="text-sm text-orange-600 font-semibold mb-2">{product.category}</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{product.name}</h3>
                     <Button
                       variant="outline"
-                      className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 bg-transparent"
+                      className="w-full group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300 bg-transparent"
                       data-interactive="true"
                     >
                       Learn More
@@ -358,7 +359,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 text-lg rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 bg-transparent"
+                className="px-8 py-4 text-lg rounded-full hover:bg-orange-600 hover:text-white transition-all duration-300 bg-transparent border-orange-600 text-orange-600"
                 data-interactive="true"
               >
                 View All Products <ArrowRight className="ml-2 h-5 w-5" />
@@ -369,7 +370,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-amber-50">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -400,7 +401,7 @@ export default function HomePage() {
                   <div className="flex items-center">
                     <div>
                       <div className="font-semibold text-gray-900">Avinesh</div>
-                      <div className="text-blue-600">Tonertech</div>
+                      <div className="text-orange-600">Tonertech</div>
                     </div>
                   </div>
                 </CardContent>
@@ -422,7 +423,7 @@ export default function HomePage() {
                   <div className="flex items-center">
                     <div>
                       <div className="font-semibold text-gray-900">Rajnesh Prasad</div>
-                      <div className="text-blue-600">Importer</div>
+                      <div className="text-orange-600">Importer</div>
                     </div>
                   </div>
                 </CardContent>
@@ -444,7 +445,7 @@ export default function HomePage() {
                   <div className="flex items-center">
                     <div>
                       <div className="font-semibold text-gray-900">Sania</div>
-                      <div className="text-blue-600">Canada</div>
+                      <div className="text-orange-600">Canada</div>
                     </div>
                   </div>
                 </CardContent>
@@ -466,7 +467,7 @@ export default function HomePage() {
                   <div className="flex items-center">
                     <div>
                       <div className="font-semibold text-gray-900">Chirag Jain</div>
-                      <div className="text-blue-600">Parag Rakhi's</div>
+                      <div className="text-orange-600">Parag Rakhi's</div>
                     </div>
                   </div>
                 </CardContent>
@@ -477,7 +478,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
+      <section className="py-20 warm-gradient">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -486,13 +487,13 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Source from India?</h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
               "You Name It, We Supply It" - Connect with us for all your Indian product sourcing needs
             </p>
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
+                className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
                 data-interactive="true"
               >
                 Get Started Today
@@ -500,7 +501,9 @@ export default function HomePage() {
             </Link>
           </motion.div>
         </div>
-      </section>
+              </section>
+
+      <Footer />
     </>
   )
 }
