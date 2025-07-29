@@ -92,6 +92,8 @@ body {
 }
 
 .custom-cursor {
+  z-index: 100 !important;
+  box-shadow: 0 0 0 2px #222, 0 0 5px rgba(255,165,0,0.5); /* Add dark outline and warm glow */
   transition: width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out, transform 0.15s ease-out, filter 0.15s ease-out;
   pointer-events: none;
   transform: translate(-50%, -50%);

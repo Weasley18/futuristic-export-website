@@ -145,24 +145,12 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400 text-center md:text-left">
-              <p>© 2024 EnnGee Enterprises. All rights reserved.</p>
+              <p>© 2025 EnnGee Enterprises. All rights reserved.</p>
               <p className="mt-1">Leading Merchant Export Organization | "Think Global…Connect Local"</p>
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link 
-                href="/Privacy and Terms.docx" 
-                target="_blank"
-                className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
-              >
-                Privacy Policy
-              </Link>
-              <Link 
-                href="/Privacy and Terms.docx" 
-                target="_blank"
-                className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
-              >
-                Terms of Service
-              </Link>
+              <a href="/Privacy-and-Terms.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-400">Privacy Policy</a>
+              <a href="/Terms-and-Conditions.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-400">Terms &amp; Conditions</a>
             </div>
           </div>
         </motion.div>

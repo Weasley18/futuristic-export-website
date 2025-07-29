@@ -56,7 +56,7 @@ export function CustomCursor() {
         ${cursorType === 'product' ? 'w-16 h-16 bg-teal-400 border-2 border-teal-600 rounded-full opacity-90 blur-sm shadow-lg' : ''}
         ${cursorType === 'loading' ? 'w-8 h-8 border-4 border-orange-400 border-t-transparent rounded-full animate-spin' : ''}
       `}
-      style={{ willChange: 'transform' }}
+      style={{ willChange: 'transform', zIndex: 100 }}
     />
   );
 }
